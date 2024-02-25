@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    flask:
+        build: ./new_project
+        container_name: flask_container
+        restart: on-failure
+        volumes: 
+            - ./new_project
+        ports:
+            - "5000:5000"
+        command: python db.py
